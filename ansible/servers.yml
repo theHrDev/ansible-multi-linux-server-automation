@@ -1,0 +1,25 @@
+---
+- name: Managing 3 servers
+  hosts: servers
+  become: false
+  tasks:
+    - name: Get the current user
+      ansible.builtin.command: whoami
+      register: loggedin_user
+
+    - name: Get the hostname
+      ansible.builtin.command: hostname
+      register: server_hostname
+
+    - name: Get the server distribution
+      ansible.builtin.debug:
+        var: ansible_facts["distribution"]
+      register: server_distribution
+
+    - name: Output the current user
+      ansible.builtin.debug:
+        msg: "Hello {{loggedin_user.stdout}}"
+
+    - name: Output the hostname
+      ansible.builtin.debug:
+        msg: "Hello {{server_hostname.stdout}}"
