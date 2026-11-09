@@ -1,0 +1,20 @@
+---
+all:
+  hosts:
+    frontend:
+      ansible_host: "10.0.1.171"
+      ansible_user: ubuntu
+    backend:
+      ansible_host: "10.0.1.176"
+      ansible_user: ubuntu
+    database:
+      ansible_host: "10.0.1.38"
+      ansible_user: ec2-user
+  children:
+    servers:
+      hosts:
+        frontend:
+        backend:
+        database:
+  vars:
+    ansible_ssh_private_key_file: host.pem
