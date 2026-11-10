@@ -1,5 +1,5 @@
 ---
-- name: Managing 3 servers
+- name: Managing servers
   hosts: servers
   become: true
   vars:
