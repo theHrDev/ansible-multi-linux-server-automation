@@ -1,7 +1,16 @@
 ---
 - name: Managing 3 servers
   hosts: servers
-  become: false
+  become: true
+  vars:
+    packages_one:
+      - httpd
+      - git
+      - unzip
+    packages_two:
+      - apache2
+      - git
+      - unzip
   tasks:
     - name: Get the current user
       ansible.builtin.command: whoami
@@ -23,3 +32,17 @@
     - name: Output the hostname
       ansible.builtin.debug:
         msg: "Hello {{server_hostname.stdout}}"
+
+    - name: install packages on Amazon linux server
+      ansible.builtin.dnf:
+        name: "{{item}}"
+        state: present
+      loop: "{{packages_one}}"
+      when: ansible_facts["distribution"] == "Amazon"
+
+    - name: install packages on Ubuntu server
+      ansible.builtin.apt:
+        name: "{{item}}"
+        state: present
+      loop: "{{packages_two}}"
+      when: ansible_facts["distribution"] == "Ubuntu"
