@@ -44,6 +44,7 @@ ansible-multi-linux-server-automation/
 │
 ├── ansible/
 │   ├── inventory.yml
+    ├── ansible.cfg
 │   └── install-packages.yml
 │
 ├── README.md
@@ -145,16 +146,16 @@ Navigate to the Ansible directory:
 cd ../ansible
 ```
 
-Test connectivity to the managed servers:
+Test connectivity to the managed servers(the inventory route is in the configuration file):
 
 ```bash
-ansible servers -i inventory.yml -m ping
+ansible servers -m ping
 ```
 
 ### 3. Execute the Ansible Playbook
 
 ```bash
-ansible-playbook -i inventory.yml install-packages.yml
+ansible-playbook install-packages.yml
 ```
 
 ## Expected Results
