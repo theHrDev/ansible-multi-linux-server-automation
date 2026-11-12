@@ -37,6 +37,7 @@ ansible-multi-linux-server-automation/
 ├── terraform/
 │   ├── provider.tf
 │   ├── vpc.tf
+│   ├── vars.tf
 │   ├── ec2.tf
 │   ├── sec-group.tf
 │   ├── variables.tf
