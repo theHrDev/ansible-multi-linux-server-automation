@@ -192,7 +192,7 @@ Through this project, I gained practical experience in:
 
 ## Author
 
-**Rukayat Abiodun**
+**Hamzat Rukayat**
 
 Frontend Developer transitioning into Cloud and DevOps engineering.
 
