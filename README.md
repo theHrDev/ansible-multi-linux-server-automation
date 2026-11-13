@@ -168,6 +168,18 @@ After successful execution:
 - The current user and hostname should be displayed.
 - Distribution-specific messages should be displayed for Amazon Linux and Ubuntu.
 
+## Project Screenshots
+
+### AWS EC2 Instances
+![EC2 Instances](screenshots/instance-running.png)
+
+### Ansible Connectivity Test
+![Ansible Ping](screenshots/connectivity.png)
+
+### Playbook Execution and Installation
+![Playbook Execution](screenshots/playbook-execution-and-package-installation.png)
+
+
 ## Challenges and Troubleshooting
 
 During implementation, some of the challenges encountered included:
